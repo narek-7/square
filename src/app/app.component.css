@@ -1,0 +1,45 @@
+td {
+  border: 2px solid white;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 38px;
+  background-color: rgba(0, 126, 245, 0.4);
+  color: rgb(1, 33, 63);
+}
+
+.whitebox {
+  border: 1px solid gray;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  font-size: 30px;
+  background-color: "white";
+}
+
+button {
+  margin-left: 1rem;
+  width: 8rem;
+  height: 3rem;
+}
+
+span {
+  margin-left: 1rem;
+  border: 1px dotted white;
+  width: 5rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 25px;
+  color: rgb(1, 33, 63);
+}
+
+.modal {
+  position: absolute;
+  top: 200px;
+  right: 50px;
+  bottom: 0;
+  left: 50;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
+}

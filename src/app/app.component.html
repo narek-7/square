@@ -1,0 +1,48 @@
+<div class="container" style="margin-top: 2rem;">
+  <table>
+    <tr *ngFor="let r of lines; let row = index;" class="row">
+      <td *ngFor="let c of r; let column = index;" class="col-3" (click)="onCellClick(row, column)">
+        {{c}}
+      </td>
+    </tr>
+  </table><br>
+
+  <button type="button" class="btn btn-danger" (click)="newGame()">
+    New game
+  </button>
+
+  <button type="button" class="btn btn-warning" (click)="StartPauseGame()">
+    Start / Stop
+  </button><br>
+
+  <span>Step - {{ steps }}</span><br>
+  <span>Time - {{ time }}</span><br>
+
+  <span *ngIf="paused" style="color:rgb(10, 97, 191)">{{ prompt }}</span>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">YOU WIN!!!</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <span style="color:red; font-size: medium;">
+         It took you - <b>{{time}}</b> seconds.   
+          You done it on - <b>{{steps}}</b> steps</span>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
