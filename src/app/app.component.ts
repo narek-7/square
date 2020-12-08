@@ -10,6 +10,7 @@ export class AppComponent {
   board = [];
   time: number = 0;
   steps: number = 0;
+  score: number = 1000;
   notStarted: string = '0';
   itsRunning: string = '1';
   itsOver: string = '2';
@@ -21,6 +22,7 @@ export class AppComponent {
   lines = [];
   emptyCellRow = undefined;
   emptyCellColumn = undefined;
+  rating: string = ''
 
   ngOnInit() {
     this.gameStatus = this.notStarted;
@@ -173,14 +175,30 @@ export class AppComponent {
   }
 
   timer() {
-    setInterval(() => {
-      if (!this.paused) {
-        this.time++;
-      }
-    }, 1000);
+  setInterval(() => {
+        if (!this.paused) {
+         this.time++;
+         if(this.score > 1){
+          this.score = 1000 - (this.time*.5) - (this.steps);
+         }
+         else{
+          this.score = 0;
+         }
+        }
+      }, 1000);
   }
 
   gameOver() {
+    if(this.score>850){
+      this.rating = 'an incredible score';}
+      else if(this.score>700){
+        this.rating = 'a nice score';}
+        else if(this.score>550){
+          this.rating = 'a good score';}
+          else if(this.score>400){
+            this.rating = 'a middle score'}
+            else {this.rating = 'a bad score. Read the rules of the game to improve your score'}
+    
     this.gameStatus = this.itsOver;
     this.paused = !this.paused;
     setTimeout(()=>
@@ -192,8 +210,6 @@ export class AppComponent {
     }, 500)
   }
 
-
-  
   newGame() {
     location.reload();
   }
