@@ -1,24 +1,46 @@
-<div class="container" style="margin-top: 2rem;">
-  <table>
-    <tr *ngFor="let r of lines; let row = index;" class="row">
-      <td *ngFor="let c of r; let column = index;" class="col-3" (click)="onCellClick(row, column)">
-        {{c}}
-      </td>
-    </tr>
-  </table><br>
+<div class="container">
+  <div class="board">  
+    <div *ngFor="let r of lines; let row = index;"  class="row">
+      <div *ngFor="let c of r; let column = index;" class="col-3" (click)="onCellClick(row, column)"> 
+        <div class = "cell">{{c}}</div>  
+      </div>
+    </div>
+  </div>
 
-  <button type="button" class="btn btn-primary" (click)="newGame()">
+  <ul class="nav">
+    <li class="nav-item">
+      <a id = "rules" class="nav-link active" href="#">Rules |</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Settings  |</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Contact Us  |</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Help |</a>
+    </li>
+  </ul>
+
+  <div class="NGbutton">
+    <button type="button" class="btn btn-outline-danger" (click)="newGame()">
     New game
-  </button>
+    </button>
+  </div>
 
-  <button type="button" class="btn btn-warning" (click)="StartPauseGame()">
+  <div class="STbutton">
+    <button class="STbutton" type="button" class="btn btn-outline-primary" (click)="StartPauseGame()">
     Start / Stop
-  </button><br>
+    </button>
+  </div>
 
-  <span>Step - {{ steps }}</span><br>
-  <span>Time - {{ time }}</span><br>
+  <span id="sc">Score - {{score | number:'1.0-0'}}</span>
+  <span id="s">step - {{ steps }}</span>
+  <span id="t">time - {{ time }} </span>
 
-  <span *ngIf="paused" style="color:rgb(10, 97, 191)">{{ prompt }}</span>
+  <div class="warning" *ngIf="paused" style="color:rgb(10, 97, 191)">{{ prompt }}</div>
+
+</div>
 
   <!-- The Modal -->
   <div class="modal fade" id="myModal">
@@ -27,15 +49,14 @@
 
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">YOU WIN!!!</h4>
+          <span class="modal-title" style="font-size: 32px; color: #b8030cde;">You Win!!!</span>
           <button type="button" class="close" data-dismiss="modal">×</button>
         </div>
 
         <!-- Modal body -->
         <div class="modal-body">
-          <span style="color:red; font-size: medium;">
-         It took you - <b>{{time}}</b> seconds.   
-          You done it on - <b>{{steps}}</b> steps</span>
+          <span class="warning" style="font-size: 36px; text-align: center;">
+         Your score is - <b>{{score | number:'1.0-0'}}</b>. Its {{rating}}</span>
         </div>
 
         <!-- Modal footer -->
