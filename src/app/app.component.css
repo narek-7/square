@@ -1,36 +1,31 @@
-td {
-  border: 2px solid white;
-  width: 4rem;
-  height: 4rem;
-  text-align: center;
-  font-size: 38px;
-  background-color: rgba(0, 126, 245, 0.4);
-  color: rgb(1, 33, 63);
-}
 
-.whitebox {
-  border: 1px solid gray;
-  width: 3rem;
-  height: 3rem;
+span {
+  font-family: French Script MT, Edwardian Script ITC, Brush Script MT;
+  margin: 20px;
+  font-size: 32px;
   text-align: center;
-  font-size: 30px;
-  background-color: "white";
+  color: #1585e0;
 }
 
 button {
-  margin-left: 1rem;
   width: 8rem;
   height: 3rem;
 }
 
-span {
-  margin-left: 1rem;
-  border: 1px dotted white;
-  width: 5rem;
-  height: 4rem;
-  text-align: center;
-  font-size: 25px;
-  color: rgb(1, 33, 63);
+.STbutton{
+  grid-column: 1/2;
+  grid-row: 5/6;
+  justify-self: left;
+  align-self: flex-end;
+  margin-left: 60px;
+}
+
+.NGbutton{
+  grid-column: 1/2;
+  grid-row: 5/6;
+  text-align: right;
+  align-self: flex-end;
+  margin-right: 60px;
 }
 
 .modal {
@@ -42,4 +37,132 @@ span {
   z-index: 10040;
   overflow: auto;
   overflow-y: auto;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 480px auto;
+  grid-template-rows: 150px 150px 150px 100px 150px 150px;
+  grid-row: 5px;
+  background-color: #b0dcff;
+  padding-left: 5px;
+  grid-template-areas: 
+  "header header"
+  "main additional"
+  "main additional"
+  "menu menu"
+  " . . "
+  "footer footer";
+}
+
+.board{
+  text-align: center;
+  align-self: center;
+  padding: 15px 15px 0 15px;
+  grid-area: main;
+  background-color: #fff;
+  border: 2px double #0065b8;
+  margin: 15px 60px 15px 50px;
+}
+
+.cell{
+  color: #004985;
+  font-size: 38px;
+  font-family: serif;
+  text-align: center;
+  margin-bottom: 15px;
+  border: 1px dotted #0065b8;
+  border-radius: 2px;
+  padding: 2px;
+  background-color: rgb(240, 240, 240);
+}
+
+.cell:empty{
+  border: none;
+  background-color: #fff;
+}
+
+.container{
+  background-color: #fff;
+}
+
+.warning{
+  font-family: Gabriola, French Script MT, Edwardian Script ITC, Brush Script MT;
+  grid-row: 5/6;
+  grid-column: 1/2;
+  text-align: center;
+  align-self: center;
+  font-size: 28px;
+}
+li{
+ font-family: Edwardian Script ITC;
+ font-size: 26px;
+ font-weight: bolder;
+}
+#rules{
+  margin-left: 15px;
+}
+
+  /* transition-property: width;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 1s; */
+
+a{
+  color: #1585e0;
+  text-decoration: none;
+  text-decoration-color: #0000;
+  transition: 2s;
+}
+
+a:hover{
+  color:red;
+  text-decoration: overline;
+  text-decoration-color: red;  
+}
+
+#sc{
+  color: red;
+  text-align: left;
+  align-self: flex-start;
+  font-size: 36px;
+  grid-area: additional;
+}
+
+#t{
+  text-align: left;
+  align-self: center;
+  grid-area: additional;
+}
+
+#s{
+  text-align: left;
+  align-self: flex-end;
+  grid-area: additional;
+}
+
+@media screen and (max-width: 768px){
+  #t{
+    text-align: center;
+    align-self: flex-end;
+    grid-area: menu;
+  }
+  
+  #s{
+    text-align: right;
+    grid-area: menu;
+    margin-right: 60px;
+  }
+  
+  #sc{
+    color: red;
+    text-align: left;
+    align-self: flex-end;
+    grid-area: menu;
+  }
+  
+  span{
+    margin-left: 50px;
+  }
 }
