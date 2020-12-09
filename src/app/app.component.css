@@ -183,5 +183,10 @@ a:hover{
   span {
     font-size: 30px;
   }
+  #sc{
+    font-size: 30px;
+    grid-area: additional;
+    display: inline-block
+    }
 
 }
