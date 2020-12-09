@@ -1,8 +1,7 @@
-
 span {
   font-family: French Script MT, Edwardian Script ITC, Brush Script MT;
   margin: 20px;
-  font-size: 32px;
+  font-size: 30px;
   text-align: center;
   color: #1585e0;
 }
@@ -96,10 +95,11 @@ button {
   font-size: 28px;
 }
 li{
- font-family: Edwardian Script ITC;
+ font-family: Edwardian Script ITC, Gabriola;
  font-size: 26px;
  font-weight: bolder;
 }
+
 #rules{
   margin-left: 15px;
 }
@@ -165,4 +165,23 @@ a:hover{
   span{
     margin-left: 50px;
   }
+}
+
+@media screen and (max-width: 500px){
+  li{
+    font-size: 20px;
+   }
+   #rules{
+    margin-left: 55px;
+  }
+  .warning{
+    font-size: 22px;
+  }
+  #s{
+    margin-right: 100px;
+  }
+  span {
+    font-size: 30px;
+  }
+
 }
