@@ -167,7 +167,7 @@ a:hover{
   }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 530px){
   li{
     font-size: 20px;
    }
@@ -179,9 +179,19 @@ a:hover{
   }
   #s{
     margin-right: 100px;
+    margin-left: 10px;
   }
+  #t{
+    margin-left: 10px;
+  }
+  
   span {
     font-size: 30px;
   }
+  #sc{
+    font-size: 26px;
+    grid-area: additional;
+    display: inline-block
+    }
 
 }
