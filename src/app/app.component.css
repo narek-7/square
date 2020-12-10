@@ -11,7 +11,7 @@ button {
   height: 3rem;
 }
 
-.STbutton{
+.STbutton {
   grid-column: 1/2;
   grid-row: 5/6;
   justify-self: left;
@@ -19,7 +19,7 @@ button {
   margin-left: 60px;
 }
 
-.NGbutton{
+.NGbutton {
   grid-column: 1/2;
   grid-row: 5/6;
   text-align: right;
@@ -46,16 +46,16 @@ button {
   grid-row: 5px;
   background-color: #b0dcff;
   padding-left: 5px;
-  grid-template-areas: 
-  "header header"
-  "main additional"
-  "main additional"
-  "menu menu"
-  " . . "
-  "footer footer";
+  grid-template-areas:
+    "header header"
+    "main additional"
+    "main additional"
+    "menu menu"
+    " . . "
+    "footer footer";
 }
 
-.board{
+.board {
   text-align: center;
   align-self: center;
   padding: 15px 15px 0 15px;
@@ -65,7 +65,7 @@ button {
   margin: 15px 60px 15px 50px;
 }
 
-.cell{
+.cell {
   color: #004985;
   font-size: 38px;
   font-family: serif;
@@ -77,16 +77,16 @@ button {
   background-color: rgb(240, 240, 240);
 }
 
-.cell:empty{
+.cell:empty {
   border: none;
   background-color: #fff;
 }
 
-.container{
+.container {
   background-color: #fff;
 }
 
-.warning{
+.warning {
   font-family: Gabriola, French Script MT, Edwardian Script ITC, Brush Script MT;
   grid-row: 5/6;
   grid-column: 1/2;
@@ -94,35 +94,35 @@ button {
   align-self: center;
   font-size: 28px;
 }
-li{
- font-family: Edwardian Script ITC, Gabriola;
- font-size: 26px;
- font-weight: bolder;
+li {
+  font-family: Edwardian Script ITC, Gabriola;
+  font-size: 26px;
+  font-weight: bolder;
 }
 
-#rules{
+#rules {
   margin-left: 15px;
 }
 
-  /* transition-property: width;
+/* transition-property: width;
   transition-duration: 2s;
   transition-timing-function: linear;
   transition-delay: 1s; */
 
-a{
+a {
   color: #1585e0;
   text-decoration: none;
   text-decoration-color: #0000;
   transition: 2s;
 }
 
-a:hover{
-  color:red;
+a:hover {
+  color: red;
   text-decoration: overline;
-  text-decoration-color: red;  
+  text-decoration-color: red;
 }
 
-#sc{
+#sc {
   color: red;
   text-align: left;
   align-self: flex-start;
@@ -130,67 +130,66 @@ a:hover{
   grid-area: additional;
 }
 
-#t{
+#t {
   text-align: left;
   align-self: center;
   grid-area: additional;
 }
 
-#s{
+#s {
   text-align: left;
   align-self: flex-end;
   grid-area: additional;
 }
 
-@media screen and (max-width: 768px){
-  #t{
+@media screen and (max-width: 768px) {
+  #t {
     text-align: center;
     align-self: flex-end;
     grid-area: menu;
   }
-  
-  #s{
+
+  #s {
     text-align: right;
     grid-area: menu;
     margin-right: 60px;
   }
-  
-  #sc{
+
+  #sc {
     color: red;
     text-align: left;
     align-self: flex-end;
     grid-area: menu;
   }
-  
-  span{
+
+  span {
     margin-left: 50px;
   }
 }
 
-@media screen and (max-width: 530px){
-  li{
+@media screen and (max-width: 530px) {
+  li {
     font-size: 20px;
-   }
-   #rules{
+  }
+  #rules {
     margin-left: 55px;
   }
-  .warning{
+  .warning {
     font-size: 22px;
   }
-  #s{
+  #s {
     margin-right: 100px;
     margin-left: 10px;
   }
-  #t{
+  #t {
     margin-left: 10px;
   }
-  
+
   span {
     font-size: 30px;
   }
 
-  #sc{
+  #sc {
     font-size: 26px;
-    }
-
+  }
 }

@@ -1,21 +1,25 @@
 <div class="container">
-  <div class="board">  
-    <div *ngFor="let r of lines; let row = index;"  class="row">
-      <div *ngFor="let c of r; let column = index;" class="col-3" (click)="onCellClick(row, column)"> 
-        <div class = "cell">{{c}}</div>  
+  <div class="board">
+    <div *ngFor="let r of lines; let row = index" class="row">
+      <div
+        *ngFor="let c of r; let column = index"
+        class="col-3"
+        (click)="onCellClick(row, column)"
+      >
+        <div class="cell">{{ c }}</div>
       </div>
     </div>
   </div>
 
   <ul class="nav">
     <li class="nav-item">
-      <a id = "rules" class="nav-link active" href="#">Rules |</a>
+      <a id="rules" class="nav-link active" href="#">Rules |</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Settings  |</a>
+      <a class="nav-link" href="#">Settings |</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Contact Us  |</a>
+      <a class="nav-link" href="#">Contact Us |</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Help |</a>
@@ -24,46 +28,56 @@
 
   <div class="NGbutton">
     <button type="button" class="btn btn-outline-danger" (click)="newGame()">
-    New game
+      New game
     </button>
   </div>
 
   <div class="STbutton">
-    <button class="STbutton" type="button" class="btn btn-outline-primary" (click)="StartPauseGame()">
-    Start / Stop
+    <button
+      class="STbutton"
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="StartPauseGame()"
+    >
+      Start / Stop
     </button>
   </div>
 
-  <span id="sc">Score - {{score | number:'1.0-0'}}</span>
+  <span id="sc">Score - {{ score | number: "1.0-0" }}</span>
   <span id="s">step - {{ steps }}</span>
   <span id="t">time - {{ time }} </span>
 
-  <div class="warning" *ngIf="paused" style="color:rgb(10, 97, 191)">{{ prompt }}</div>
-
-</div>
+  <div class="warning" *ngIf="paused" style="color: rgb(10, 97, 191)">
+    {{ prompt }}
+  </div>
 
   <!-- The Modal -->
   <div class="modal fade" id="myModal">
     <div class="modal-dialog">
       <div class="modal-content">
-
         <!-- Modal Header -->
         <div class="modal-header">
-          <span class="modal-title" style="font-size: 32px; color: #b8030cde;">You Win!!!</span>
+          <span class="modal-title" style="font-size: 32px; color: #b8030cde"
+            >You Win!!!</span
+          >
           <button type="button" class="close" data-dismiss="modal">×</button>
         </div>
 
         <!-- Modal body -->
         <div class="modal-body">
-          <span class="warning" style="font-size: 36px; text-align: center;">
-         Your score is - <b>{{score | number:'1.0-0'}}</b>. Its {{rating}}</span>
+          <span class="warning" style="font-size: 36px; text-align: center">
+            Your score is - <b>{{ score | number: "1.0-0" }}</b
+            >. Its {{ rating }}</span
+          >
         </div>
 
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Close
+          </button>
         </div>
-
       </div>
     </div>
   </div>
+</div>
