@@ -10,7 +10,7 @@ export class AppComponent {
   board = [];
   time: number = 0;
   steps: number = 0;
-  score: number = 1000;
+  score: number = 999;
   notStarted: string = '0';
   itsRunning: string = '1';
   itsOver: string = '2';
@@ -34,6 +34,10 @@ export class AppComponent {
       [12, 13, 14, undefined],
     ];
     this.arrayToMatrix();
+
+    $(document).ready(function () {
+      $('[data-toggle="popover"]').popover();
+    });
   }
 
   createRandomArray() {
@@ -108,9 +112,8 @@ export class AppComponent {
 
   moveCellUp() {
     if (this.emptyCellRow != this.row - 1) {
-      this.lines[this.emptyCellRow][this.emptyCellColumn] = this.lines[
-        this.emptyCellRow + 1
-      ][this.emptyCellColumn];
+      this.lines[this.emptyCellRow][this.emptyCellColumn] =
+        this.lines[this.emptyCellRow + 1][this.emptyCellColumn];
       this.lines[this.emptyCellRow + 1][this.emptyCellColumn] = undefined;
       this.emptyCellRow++;
       this.steps++;
@@ -120,9 +123,8 @@ export class AppComponent {
 
   moveCellDown() {
     if (this.emptyCellRow != 0) {
-      this.lines[this.emptyCellRow][this.emptyCellColumn] = this.lines[
-        this.emptyCellRow - 1
-      ][this.emptyCellColumn];
+      this.lines[this.emptyCellRow][this.emptyCellColumn] =
+        this.lines[this.emptyCellRow - 1][this.emptyCellColumn];
       this.lines[this.emptyCellRow - 1][this.emptyCellColumn] = undefined;
       this.emptyCellRow--;
       this.steps++;
@@ -132,9 +134,8 @@ export class AppComponent {
 
   moveCellRigtht() {
     if (this.emptyCellColumn != 0) {
-      this.lines[this.emptyCellRow][this.emptyCellColumn] = this.lines[
-        this.emptyCellRow
-      ][this.emptyCellColumn - 1];
+      this.lines[this.emptyCellRow][this.emptyCellColumn] =
+        this.lines[this.emptyCellRow][this.emptyCellColumn - 1];
       this.lines[this.emptyCellRow][this.emptyCellColumn - 1] = undefined;
       this.emptyCellColumn--;
       this.steps++;
@@ -144,9 +145,8 @@ export class AppComponent {
 
   moveCellLeft() {
     if (this.emptyCellColumn != this.column - 1) {
-      this.lines[this.emptyCellRow][this.emptyCellColumn] = this.lines[
-        this.emptyCellRow
-      ][this.emptyCellColumn + 1];
+      this.lines[this.emptyCellRow][this.emptyCellColumn] =
+        this.lines[this.emptyCellRow][this.emptyCellColumn + 1];
       this.lines[this.emptyCellRow][this.emptyCellColumn + 1] = undefined;
       this.emptyCellColumn++;
       this.steps++;
@@ -185,7 +185,7 @@ export class AppComponent {
       if (!this.paused) {
         this.time++;
         if (this.score > 1) {
-          this.score = 1000 - this.time * 0.5 - this.steps;
+          this.score = 999 - this.time * 0.5 - this.steps * 0.2;
         } else {
           this.score = 0;
         }
